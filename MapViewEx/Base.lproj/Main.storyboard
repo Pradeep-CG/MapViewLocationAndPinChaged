@@ -1,24 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="yMz-Nn-gu5">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Second View Controller-->
+        <scene sceneID="GVd-HQ-Ikb">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                <viewController storyboardIdentifier="secondView" id="yMz-Nn-gu5" customClass="SecondViewController" customModule="MapViewEx" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="uxE-IX-sri">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="zeW-tq-WLC">
+                                <rect key="frame" x="0.0" y="150" width="414" height="712"/>
+                                <connections>
+                                    <outlet property="delegate" destination="yMz-Nn-gu5" id="MKq-qt-lnb"/>
+                                </connections>
+                            </mapView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="RFP-qV-IRH">
+                                <rect key="frame" x="0.0" y="54" width="414" height="86"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="zeW-tq-WLC" firstAttribute="top" secondItem="uxE-IX-sri" secondAttribute="top" constant="150" id="QfD-h8-aOF"/>
+                            <constraint firstItem="zeW-tq-WLC" firstAttribute="leading" secondItem="cWl-Ys-o1k" secondAttribute="leading" id="RoN-nr-F93"/>
+                            <constraint firstItem="RFP-qV-IRH" firstAttribute="top" secondItem="cWl-Ys-o1k" secondAttribute="top" constant="10" id="USr-Hk-Emc"/>
+                            <constraint firstItem="cWl-Ys-o1k" firstAttribute="bottom" secondItem="zeW-tq-WLC" secondAttribute="bottom" id="qMw-bz-YAR"/>
+                            <constraint firstItem="zeW-tq-WLC" firstAttribute="top" secondItem="RFP-qV-IRH" secondAttribute="bottom" constant="10" id="sV3-EQ-pKm"/>
+                            <constraint firstItem="RFP-qV-IRH" firstAttribute="leading" secondItem="cWl-Ys-o1k" secondAttribute="leading" id="zBL-40-B0e"/>
+                            <constraint firstItem="cWl-Ys-o1k" firstAttribute="trailing" secondItem="RFP-qV-IRH" secondAttribute="trailing" id="zdU-Sn-CIa"/>
+                            <constraint firstItem="cWl-Ys-o1k" firstAttribute="trailing" secondItem="zeW-tq-WLC" secondAttribute="trailing" id="zta-SU-Ek7"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="cWl-Ys-o1k"/>
                     </view>
+                    <connections>
+                        <outlet property="mapView" destination="zeW-tq-WLC" id="FQt-On-3Rp"/>
+                        <outlet property="txtView" destination="RFP-qV-IRH" id="UCl-Il-rrk"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="86f-8b-fMV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-528.98550724637687" y="0.6696428571428571"/>
         </scene>
     </scenes>
 </document>
